@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Banco Personal</title>
+            <!-- Link para los font-awsome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+            <!-- Link para el archivo css  -->
+    <link rel="stylesheet" href="css/estilo.css">
+            <!-- Link para el archivo js -->
+
+  </head>
+  <body>
+    <header>
+      <!-- IDEA: Javascript; al principio se queda igual, en el boton de area de clientes,
+       se introduce el nombre de usuario que luego cambiará el primer span para saludarnos -->
+      <div class="saludobenji" id="registro_texto">Bienvenido, introduzca sus datos.</div>
+     
+	  <!-- Trigger/Open The Modal -->
+<button id="identificacion">Identifíquese</button>
+
+<!-- The Modal -->
+<div id="dialogo_modal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+     <div class="areapersonalbenji">
+        <div>
+          <i class="fas fa-users-cog"></i>
+        </div>
+        <div class="registro_ocultar">
+          <span>Usuario: </span>
+          <input type="text" id="registro_usuario" value="">
+        </div>
+        <div class="registro_ocultar">
+          <button type="button" id="registro_boton" name="button" onclick="Registrarse_Inicio()">Regístrese</button>
+        </div>
+      </div>
+  </div>
+
+</div>
+    </header>
+
+    <!-- PESTAÑAS o TABS  -->
+
+        <!-- ENLACES DE LOS TABS -->
+
+          <div class="tab" id="tab12">
+                <button class="tab_enlace" onclick="abrirtab('tab_cuentas')">Cuentas</button>
+                <button class="tab_enlace" onclick="abrirtab('tab_movimientos')">Movimientos</button>
+                <button class="tab_enlace" onclick="abrirtab('tab_presupuestos')">Presupuestos</button>
+				 <button class="tab_enlace" onclick="abrirtab('tab_calculadora')">Calculadora</button>
+          </div>
+
+        <!--  CONTENIDO DE LOS TABS -->
+          <div id="tab_cuentas" class="tab_contenido">
+                <h3>Cuentas</h3>
+				<div id="myDIV" class="header">
+				  <h2 style="margin:5px">Mis gastos a tener en Cuenta</h2>
+				  <input type="text" id="myInput" placeholder="introduce un gasto">
+				  <span onclick="newElement()" class="addBtn">Introducir</span>
+				  <input type="text" id="myEuros" placeholder="Precio">
+				  <span onclick="sumaEuros()" class="addBtn">Introducir(Euros)</span>
+				</div>
+				<div id=midivcompras>
+				<ul id="myUL">
+				  <li>Compra de Mercadona</li>
+				  <li>Compra de Ropa</li>
+				  <li>Seuro del coche</li>
+				  <li>Gasolina</li>
+				  <li>Salir de Cena</li>
+				  <li>Regalos</li>
+				</ul>
+				</div>
+				<div id="midiveuros">
+				<ul id="misEuros">
+				  <li>30</li>
+				  <li>70</li>
+				  <li>300</li>
+				  <li>50</li>
+				  <li>30</li>
+				  <li>40</li>
+				</ul>
+				</div>
+
+          </div>
+
+          <div id="tab_movimientos" class="tab_contenido">
+            <h3>Saldo disponible: 975,00€</h3>
+              <input type="text" id="movimientos" onkeyup="movimientos_buscar()" placeholder="Buscar . . .">
+
+              <ul id="cuentas_lista">
+            <li><a href="#">Pago EMASESA: -110€</a></li>
+            <li><a href="#">RETIRADA CAJERO: -30€</a></li>
+            <li><a href="#">Pago Tarjeta 475553243452: 35,45€</a></li>
+            <li><a href="#">INGRESO CAJERO: +5€</a></li>
+            <li><a href="#">Pago EMASESA: -110€</a></li>
+            <li><a href="#">RETIRADA CAJERO: -10€</a></li>
+            <li><a href="#">Pago Tarjeta 475553243452: 140,45€</a></li>
+            <li><a href="#">INGRESO CAJERO: +10€</a></li>
+            <li><a href="#">RETIRADA CAJERO: -30€</a></li>
+            <li><a href="#">RETIRADA CAJERO: -50€</a></li>
+            <li><a href="#">Pago EMASESA: -110€</a></li>
+            <li><a href="#">RETIRADA CAJERO: -30€</a></li>
+            <li><a href="#">Pago Tarjeta 475553243452: 14,33€</a></li>
+            <li><a href="#">Pago EMASESA: -110€</a></li>
+            <li><a href="#">INGRESO CAJERO: +10€</a></li>
+            <li><a href="#">INGRESO CAJERO: +30€</a></li>
+          </ul>
+          </div>
+
+          <div id="tab_presupuestos" class="tab_contenido">
+                <h3>Presupuestos</h3>
+			<div class="ale">
+					<button class="acordeon">Facturas</button>
+					<div class="panel">
+						<table>
+							<tr>
+							<td>Luz</td>
+							<td>123 Euros</td>
+							</tr>
+							<tr>
+							<td>Agua</td>
+							<td>12324 Euros</td>
+							</tr>
+							<tr>
+							<td>Gas</td>
+							<td>345345 Euros</td>
+							</tr>
+						<tr>
+						<td>Internet+Móvil</td>
+						<td>1423423 Euros</td>
+					  </tr>
+					</table>
+					</div>
+					<button class="acordeon">Comida</button>
+					<div class="panel">
+					  <table>
+					  <tr>
+						<td>Supermercado</td>
+						<td>1232 Euros</td>
+					  </tr>
+					  <tr>
+						<td>Restaurantes</td>
+						<td>6456 Euros</td>
+						</tr>
+						</table>
+						</div>
+					<button class="acordeon">Viajes</button>
+						<div class="panel">
+					<table>
+						<tr>
+						<td>Viajes</td>
+						 <td>234 Euros</td>
+						</tr>
+					</table>
+						</div>
+						<button class="acordeon">Otros Gastos</button>
+						<div class="panel">
+						<table>
+					<tr>
+						<td>Seguros</td>
+						<td>5634 Euros</td>
+					</tr>
+					<tr>
+					  <td>Averias</td>
+					  <td>67 Euros</td>
+					</tr>
+					<tr>
+					  <td>Otros</td>
+					  <td>780 Euros</td>
+					</tr>
+					</table>
+					</div>
+			</div>
+		 </div>
+		  <div id="tab_calculadora" class="tab_contenido">
+                <h3>Calculadora</h3>
+                <p>Ayudese de nuestra calculadora para hacer las cuentas.</p>
+		  <table class="calculadora">  
+		  <tr>
+				<td colspan="4"><span id="resultado"></span></td>
+				</tr>
+				<tr>
+					<td><button id="siete">7</button></td>
+					<td><button id="ocho">8</button></td>
+					<td><button id="nueve">9</button></td>
+					<td><button id="division">/</button></td>
+				</tr>
+				<tr>
+					<td><button id="cuatro">4</button>
+					</td><td><button id="cinco">5</button></td>
+					<td><button id="seis">6</button></td>
+					<td><button id="multiplicacion">*</button></td>
+				</tr>
+				<tr>
+					<td><button id="uno">1</button></td>
+					<td><button id="dos">2</button></td>
+					<td><button id="tres">3</button></td>
+					<td><button id="resta">-</button></td>
+				</tr>
+				<tr>
+					<td><button id="igual">=</button></td>
+					<td><button id="reset">C</button></td>
+					<td><button id="cero">0</button></td><td>
+				<button id="suma">+</button></td>
+				</tr>
+			</table>
+		  </div>	
+			<div>
+
+          <!-- CONTENIDO DE LA PÁGINA  -->
+		   <!-- Slideshow container -->
+                  <div id="slide_masterino">
+
+                  <div class="slide_master">
+
+                    <!-- Full-width images with number and caption text -->
+                    <div class="slide_imagen">
+                      <img src="img/nuevoplan.jpg" style="width:100%" alt="foto1">
+                    </div>
+
+                    <div class="slide_imagen">
+                      <img src="img/santander1.jpg" style="width:100%" alt="foto2">
+                    </div>
+
+                    <div class="slide_imagen">
+                      <img src="img/bancamovil.jpg" style="width:100%" alt="foto3">
+                    </div>
+
+                    <!-- Next and previous buttons -->
+                    <a class="anterior" onclick="plusSlides(-1)"><i class="fas fa-arrow-circle-left"></i></a>
+                    <a class="posterior" onclick="plusSlides(1)"><i class="fas fa-arrow-circle-right"></i></a>
+
+                  </div>
+
+                </div>
+                  <!-- FIN SLIDE DE IMÁGENES -->
+
+          <!-- PIE DE PÁGINA -->
+          <footer>
+            <div class="footer_izquierda">
+              <p>Nuestra Oficina: </p>
+              <p><i class="fas fa-street-view"></i> CALLE JULIO REY PASTOR,<br>
+                 6 - 28007 - MADRID (MADRID)<br>
+                 <i class="fas fa-phone"></i> 955463578 <br>
+                 <i class="fas fa-clock"></i> 7:30 - 22:10 <br>
+
+                </p>
+            </div>
+            <div class="footer_derecha">
+              <i class="fab fa-facebook-square"></i>
+              <i class="fas fa-envelope"></i>
+              <i class="fab fa-twitter-square"></i>
+            </div>
+          </footer>
+          <!-- FIN DE PÁGINA -->
+    <!-- LINK A ENLACE JAVASCRIPT -->
+    <script type="text/javascript" src="java/java.js"></script><noscript>JAVASCRIPT NO ESTA HABILITADO.</noscript>
+  </body>
+</html>

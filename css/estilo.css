@@ -1,0 +1,444 @@
+html{
+  color: #110934;
+  width: 100%;
+  height: 100%;
+  background-color: #D4EDF7;}
+body{
+  width: 100%;
+  margin: 0px;
+}
+header{
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #347B98;
+  font-size: 23px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+/*  INICIO FOOTER */
+footer{
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #347B98;
+  padding-left: 15px;
+  font-size: 15px;
+  padding-right: 15px;
+  border-radius: 30px 30px 0px 0px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+footer p{
+  margin: 0;
+}
+.footer_izquierda{
+  align-self: flex-start;
+  margin-left: 5em;
+  font-size: 15px;
+}
+.footer_derecha{
+  align-self: flex-end;
+  margin-right: 5em;
+  font-size: 18px;
+}
+.footer_izquierda p:nth-child(2){
+  font-size: 15px;
+}
+.footer_derecha i{
+  margin: auto;
+  font-size: 30px;
+}
+/* FIN FOOTER */
+.saludobenji{
+  margin-left: 15px;
+}
+.areapersonalbenji button{
+  margin-right: 10px;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.areapersonalbenji div{
+  display: inline-flex;
+}
+header button {
+  vertical-align: middle;
+  border-radius: 30px 0px 0px 30px;
+}
+
+/* PESTAÑAS O TABS */
+.tab {
+  display:none;
+  float: left;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 50%;
+  margin: auto;
+  border-radius: 0px 0px 90px 0px;
+  border-top-width: thick;
+}
+
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  margin:auto;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tab_contenido {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+/* CALCULADORA STYLE*/
+
+.calculadora{
+  display:block;
+  margin:0 auto;
+  padding:20px;
+  background-color:#797979;
+  width:93%;
+  height:420px;
+  border-radius: 25px;
+}
+.calculadora td button{
+     display: block;
+   width: 211px;
+    height: 59px;
+    font-size: 40px;
+}
+#resultado{
+  font-size: 50px;
+  text-align: center;
+  display: block;
+  margin: auto;
+  width: 93%;
+  height: 50px;
+  background-color:#fff;
+}
+/* INICIO SLIDE DE IMAGENES */
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slide_master {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.slide_imagen {
+  display: none;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.anterior, .posterior {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.posterior {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.anterior:hover, .posterior:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: darkblue;
+}
+
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/* INICIO ACORDEON */
+/*modal estilo*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+/*  ACORDEON *//* Estilo de los botones abrir y cerrar el panel*/
+.acordeon {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Añadir un fondo al boton si se pulsa sobre el(e .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Estilo del acordeon en sí, por defecto ocultado. */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+
+/*Estilo de tablas*/
+.ale table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.ale td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.ale tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/* INICIO FILTRO */
+#movimientos {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#cuentas_lista {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#cuentas_lista li a {
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+}
+
+#cuentas_lista li a:hover:not(.header) {
+  background-color: #eee;
+}
+/* FIN FILTRO */
+
+
+
+/*INICIO TO DO LIST*/
+
+
+/* Eliminar márgenes de la lista */
+#tab_cuentas ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos de la Lista */
+#tab_cuentas ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+
+  /* Hacer inseleccionables los elementos de la lista */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* hacer que todos los elementos de la lista tenan colores diferentes (rayas de cebra) */
+#tab_cuentas ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Color de fondo más oscuro al pasar el raton */
+#tab_cuentas ul li:hover {
+  background: #ddd;
+}
+
+/* Al clicar cambia el color de fondo y se tacha el texto */
+#tab_cuentas ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Añadade una marca de check cuando cliclas */
+#tab_cuentas ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* estilo del boton de cerrar */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Estilo de la cabecera */
+.header {
+  background-color: #347B98;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/* elimitr posibles floatas tras la cabecera */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Estilos del input */
+#tab_cuentas input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Estilo del boton añadir */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+#midivcompras{
+  float: left;
+  width: 60%;
+}
+#midiveuros{
+  float: left;
+  width: 40%;
+}
+.addBtn:hover {
+  background-color: #bbb;
+}
+}
